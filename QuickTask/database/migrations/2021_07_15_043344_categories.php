@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Theloais extends Migration
+class Categories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class Theloais extends Migration
      */
     public function up()
     {
-        Schema::create('theloai', function (Blueprint $table) {
+        Schema::create('Categories', function (Blueprint $table) {
             $table->id();
-            $table->string('TenTheLoai');
+            $table->string('CategoriesName');
         });
     }
 
@@ -26,6 +26,6 @@ class Theloais extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('theloai');
+        Schema::dropIfExists('Categories');
     }
 }

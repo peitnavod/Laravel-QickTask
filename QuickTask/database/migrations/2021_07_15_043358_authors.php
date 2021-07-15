@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tacgias extends Migration
+class Authors extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class Tacgias extends Migration
      */
     public function up()
     {
-        Schema::create('tacgia', function (Blueprint $table) {
+        Schema::create('Authors', function (Blueprint $table) {
             $table->id();
-            $table->string('TenTacGia');
-            $table->string('NamSinh');
+            $table->string('AuthorsName');
+            $table->string('BirthDate');
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -26,6 +27,6 @@ class Tacgias extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tacgia');
+        Schema::dropIfExists('Authors');
     }
 }
