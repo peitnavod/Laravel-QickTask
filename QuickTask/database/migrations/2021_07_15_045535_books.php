@@ -13,20 +13,19 @@ class Books extends Migration
      */
     public function up()
     {
-        Schema::create('Books', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('BookName')->unique();
-            $table->string('Description');
-            $table->string('Year');
-            $table->string('Image');
-            $table->integer('Amount');
-            $table->bigInteger('IdAuthors')->unsigned();
-            $table->bigInteger('IdCategories')->unsigned();
-            $table->foreign('IdAuthors')->references('id')->on('Authors');
-            $table->foreign('IdCategories')->references('id')->on('Categories');
+            $table->string('book_name')->unique();
+            $table->string('description');
+            $table->string('year');
+            $table->string('image');
+            $table->integer('amount');
+            $table->bigInteger('id_authors')->unsigned();
+            $table->bigInteger('id_categories')->unsigned();
+            $table->foreign('id_authors')->references('id')->on('authors');
+            $table->foreign('id_categories')->references('id')->on('categories');
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -34,6 +33,6 @@ class Books extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Books');
+        Schema::dropIfExists('books');
     }
 }
